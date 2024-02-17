@@ -120,7 +120,7 @@
               <span class="menu-header-text">Data Master</span>
             </li>
             <li class="menu-item">
-              <a href="index.html" class="menu-link">
+              <a href="/peserta" class="menu-link">
               <i class="menu-icon tf-icons bx bx-dock-top"></i>
                 <div data-i18n="Analytics">Data Peserta</div>
               </a>
