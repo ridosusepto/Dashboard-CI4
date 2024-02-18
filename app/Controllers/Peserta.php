@@ -48,8 +48,10 @@ class Peserta extends BaseController
 
     public function tambah()
     {
+        session();
         $data = [
-            'title'     => 'Form tambah data peserta'
+            'title'     => 'Form tambah data peserta',
+            'validation'=> \Config\Services::validation()
         ];
 
         echo view('templates/header', $data);
@@ -78,7 +80,8 @@ class Peserta extends BaseController
             'course_nama'           => 'required',
             'kelaskategori'         => 'required'
         ])){
-            return redirect()->to('peserta/tambah');
+            $validation = \Config\Services::validation();
+            return redirect()->to('peserta/tambah')->withInput()->with('validation', $validation);
         }
 
             $this->PesertaModel->save([

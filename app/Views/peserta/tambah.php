@@ -12,6 +12,7 @@
                 <div class="card mb-4">
                     <div class="card-header d-flex justify-content-between align-items-center">
                         <h5 class="mb-0">Tambah Data Peserta</h5>
+                        <?= $validation->listErrors(); ?>
                         <small class="text-muted float-end">Merged input group</small>
                     </div>
                     <div class="card-body">
