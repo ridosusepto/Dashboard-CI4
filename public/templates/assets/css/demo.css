@@ -105,3 +105,9 @@
   text-align: center;
   margin-top: 1rem;
 }
+/* CSS */
+.input-group input[readonly] {
+  background-color: #fff; /* Warna latar belakang putih */
+  color: #000; /* Warna teks hitam */
+}
+
