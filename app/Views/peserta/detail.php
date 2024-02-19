@@ -94,12 +94,11 @@
                 <p class="mb-0">Once you delete your data <?= $peserta['peserta_nama']; ?>, there is no going back. Please be certain.</p>
               </div>
             </div>
-            <form id="formAccountDeactivation" onsubmit="return false">
+            <form action="/peserta/<?= $peserta['peserta_id']; ?>" method="post">
               <div class="form-check mb-3">
-                <input class="form-check-input" type="checkbox" name="accountActivation" id="accountActivation" />
-                <label class="form-check-label" for="accountActivation">I confirm my data <?= $peserta['peserta_nama']; ?> deactivation</label>
+                <input type="hidden" name="_method" value="DELETE" />
               </div>
-              <button type="submit" class="btn btn-danger deactivate-account">Deactivate Data</button>
+              <button type="submit" class="btn btn-danger deactivate-account" onclick="return confirm('Apakah anda yakin?');">Delete Data</button>
             </form>
           </div>
         </div>

@@ -4,11 +4,11 @@
 
   <div class="container-xxl flex-grow-1 container-p-y">
     <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Peserta</span></h4>
-    <?php if(session()->getFlashdata('alert')) :?>
+    <?php if (session()->getFlashdata('alert')) : ?>
       <div class="alert alert-success" role="alert">
         <?= session()->getFlashdata('alert'); ?>
       </div>
-      <?php endif; ?>
+    <?php endif; ?>
     <!-- Basic Bootstrap Table -->
     <div class="card pb-5">
       <h5 class="card-header">Table Peserta
@@ -55,7 +55,10 @@
                     <div class="dropdown-menu">
                       <a class="dropdown-item" href="/peserta/detail/<?= $pst['peserta_id']; ?>"><i class="bx bx-detail me-2"></i> Detail</a>
                       <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-edit-alt me-2"></i> Edit</a>
-                      <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-trash me-2"></i> Delete</a>
+                      <form action="/peserta/<?= $pst['peserta_id']; ?>" method="post">
+                          <input type="hidden" name="_method" value="DELETE" />
+                        <button type="submit" class="dropdown-item" onclick="return confirm('Apakah anda yakin?');" ><i class="bx bx-trash me-2"></i> Delete</button>
+                      </form>
                     </div>
                   </div>
                 </td>

@@ -7,7 +7,7 @@ use CodeIgniter\Model;
 class PesertaModel extends Model
 {
     protected $table      = 'tb_peserta';
-    protected $primaryKey = 'peserta_';
+    protected $primaryKey = 'peserta_id';
     protected $allowedFields = [
         'peserta_nip',           
         'peserta_nama',        
