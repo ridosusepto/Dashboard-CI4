@@ -49,16 +49,16 @@ class Peserta extends BaseController
     public function tambah()
     {
         session();
-    
+
         $data = [
             'title'      => 'Form tambah data peserta',
             'validation' => \Config\Services::validation()
         ];
-    
+
         echo view('templates/header', $data);
         echo view('templates/sidebar');
         echo view('templates/navbar');
-        echo view('peserta/tambah', $data); 
+        echo view('peserta/tambah', $data);
         echo view('templates/footer');
     }
 
@@ -112,6 +112,67 @@ class Peserta extends BaseController
     {
         $this->PesertaModel->delete($peserta_id);
         session()->setFlashdata('alert', 'Data berhasil di hapus`.');
+        return redirect()->to('/peserta');
+    }
+
+    public function edit($peserta_id)
+    {
+        $data = [
+            'title'      => 'Form Edit data peserta',
+            'validation' => \Config\Services::validation(),
+            'peserta'    => $this->PesertaModel->getPeserta($peserta_id)
+        ];
+
+        echo view('templates/header', $data);
+        echo view('templates/sidebar');
+        echo view('templates/navbar');
+        echo view('peserta/edit', $data);
+        echo view('templates/footer');
+    }
+
+
+    public function update($peserta_id)
+    {
+        if (!$this->validate([
+            'peserta_nip'           => 'required|numeric',
+            'peserta_nama'          => 'required',
+            'peserta_email'         => 'required|valid_email',
+            'peserta_ttl'           => 'required',
+            'peserta_telp'          => 'required|numeric',
+            'peserta_agama'         => 'required',
+            'peserta_gender'        => 'required',
+            'peserta_alamat'        => 'required',
+            'peserta_kota'          => 'required',
+            'peserta_kodepos'       => 'required|numeric',
+            'peserta_portofolio'    => 'required',
+            'peserta_payment'       => 'required',
+            'status_nama'           => 'required',
+            'course_nama'           => 'required',
+            'kelaskategori'         => 'required'
+        ])) {
+            $validation = \Config\Services::validation();
+            return redirect()->to('/peserta/edit/' . $peserta_id)->withInput()->with('validation', $validation);
+        }
+
+        $this->PesertaModel->update($peserta_id, [
+            'peserta_nip'           => $this->request->getVar('peserta_nip'),
+            'peserta_nama'          => $this->request->getVar('peserta_nama'),
+            'peserta_email'         => $this->request->getVar('peserta_email'),
+            'peserta_ttl'           => $this->request->getVar('peserta_ttl'),
+            'peserta_telp'          => $this->request->getVar('peserta_telp'),
+            'peserta_agama'         => $this->request->getVar('peserta_agama'),
+            'peserta_gender'        => $this->request->getVar('peserta_gender'),
+            'peserta_alamat'        => $this->request->getVar('peserta_alamat'),
+            'peserta_kota'          => $this->request->getVar('peserta_kota'),
+            'peserta_kodepos'       => $this->request->getVar('peserta_kodepos'),
+            'peserta_portofolio'    => $this->request->getVar('peserta_portofolio'),
+            'peserta_payment'       => $this->request->getVar('peserta_payment'),
+            'status_nama'           => $this->request->getVar('status_nama'),
+            'course_nama'           => $this->request->getVar('course_nama'),
+            'kelaskategori'         => $this->request->getVar('kelaskategori')
+        ]);
+
+        session()->setFlashdata('alert', 'Data berhasil di edit.');
         return redirect()->to('/peserta');
     }
 }

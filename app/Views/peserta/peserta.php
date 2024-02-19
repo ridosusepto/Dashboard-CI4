@@ -12,7 +12,7 @@
     <!-- Basic Bootstrap Table -->
     <div class="card pb-5">
       <h5 class="card-header">Table Peserta
-        <a href='/peserta/tambah' class=" btn btn btn-primary float-end">
+        <a href="/peserta/tambah" class=" btn btn btn-primary float-end">
           <span class="tf-icons bx bx-plus"></span>&nbsp; Tambah Data
         </a>
       </h5>
@@ -27,7 +27,6 @@
               <th>Actions</th>
             </tr>
           </thead>
-
           <tbody class="table-border-bottom-0">
             <?php $i = 1; ?>
             <?php foreach ($peserta as $pst) : ?>
@@ -54,7 +53,7 @@
                     </button>
                     <div class="dropdown-menu">
                       <a class="dropdown-item" href="/peserta/detail/<?= $pst['peserta_id']; ?>"><i class="bx bx-detail me-2"></i> Detail</a>
-                      <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-edit-alt me-2"></i> Edit</a>
+                      <a class="dropdown-item" href="/peserta/edit/<?= $pst['peserta_id']; ?>"><i class="bx bx-edit-alt me-2"></i> Edit</a>
                       <form action="/peserta/<?= $pst['peserta_id']; ?>" method="post">
                           <input type="hidden" name="_method" value="DELETE" />
                         <button type="submit" class="dropdown-item" onclick="return confirm('Apakah anda yakin?');" ><i class="bx bx-trash me-2"></i> Delete</button>

@@ -78,7 +78,7 @@
                 </div>
               </div>
               <div class="mt-2">
-                <button type="button" onclick="window.location.href='/peserta'" class="btn btn-primary me-2">Edit Peserta</button>
+                <button type="button" onclick="window.location.href='/peserta/edit/<?= $peserta['peserta_id']; ?>' " class="btn btn-primary me-2">Edit Peserta</button>
                 <button type="button" onclick="window.location.href='/peserta'" class="btn btn-outline-secondary">Kembali</button>
               </div>
             </form>
