@@ -76,8 +76,8 @@
                                         <label class="form-label" for="peserta_gender">Pilih Gender</label>
                                         <select class="form-select" id="peserta_gender" name="peserta_gender">
                                             <option value="<?= $peserta['peserta_gender']; ?>" selected disabled><?= $peserta['peserta_gender']; ?></option>
-                                            <option value="Pria">Pria</option>
-                                            <option value="Perempuan">Perempuan</option>
+                                            <option value="male">Male</option>
+                                            <option value="female">Female</option>
                                         </select>
                                     </div>
                                     <label class="form-label" for="peserta_alamat">Alamat</label>
@@ -135,7 +135,7 @@
                                         <input type="text" id="kelaskategori" name="kelaskategori" class="form-control" value="<?= $peserta['kelaskategori']; ?>"  required />
                                     </div>
                                 </div>
-                                <button type="submit" class="btn btn-primary">Edit data</button>
+                                <button type="submit" class="btn btn-primary">Submit</button>
                                 <button type="button" onclick="window.location.href='/peserta'" class="btn btn-outline-secondary">Kembali</button>
                         </form>
                     </div>

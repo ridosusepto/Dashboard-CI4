@@ -16,7 +16,7 @@
                     </div>
                     <div class="card-body">
                         <form action="/peserta/save" method="post">
-                            <!-- <?= csrf_field(); ?> -->
+                            <?= csrf_field(); ?>
                             <div class="mb-3">
                                 <label class="form-label" for="peserta_nip">NIP</label>
                                 <div class="input-group input-group-merge">
@@ -85,9 +85,9 @@
                                     <div class="mb-3">
                                         <label class="form-label" for="peserta_gender">Pilih Gender</label>
                                         <select class="form-select" id="peserta_gender" name="peserta_gender">
-                                            <option value="" selected disabled>Pilih Agama</option>
-                                            <option value="Pria">Pria</option>
-                                            <option value="Perempuan">Perempuan</option>
+                                            <option value="" selected disabled>Pilih Gender</option>
+                                            <option value="male">Male</option>
+                                            <option value="female">Female</option>
                                         </select>
                                     </div>
                                     <label class="form-label" for="peserta_alamat">Alamat</label>
@@ -133,10 +133,12 @@
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label" for="course_nama">Course</label>
-                                    <div class="input-group input-group-merge">
-                                        <span id="course_nama" class="input-group-text"><i class='bx bxs-graduation'></i></span>
-                                        <input type="text" id="course_nama" name="course_nama" class="form-control" placeholder="course" aria-label="Kota" aria-describedby="course_nama" />
-                                    </div>
+                                    <select id="course_nama" name="course_nama" class="form-select" aria-label="Course">
+                                        <option selected disabled>Pilih Course</option>
+                                        <?php foreach ($courses as $course) : ?>
+                                            <option value="<?= $course['course_nama']; ?>"><?= $course['course_nama']; ?></option>
+                                        <?php endforeach; ?>
+                                    </select>
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label" for="kelaskategori">Kelas & Kategori</label>

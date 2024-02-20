@@ -2,11 +2,13 @@
 
 namespace App\Controllers;
 
+use App\Models\CourseModel;
 use App\Models\PesertaModel;
 
 class Peserta extends BaseController
 {
     protected $PesertaModel;
+    protected $CourseModel;
     public function __construct()
     {
         $this->PesertaModel = new PesertaModel();
@@ -14,8 +16,6 @@ class Peserta extends BaseController
 
     public function index()
     {
-        
-
         $data = [
             'title'     => 'Peserta',
             'peserta'   => $this->PesertaModel->getPeserta()
@@ -50,9 +50,12 @@ class Peserta extends BaseController
     {
         session();
 
+        $courseModel= new CourseModel();
+        $data['courses']=$courseModel->findAll();
         $data = [
             'title'      => 'Form tambah data peserta',
-            'validation' => \Config\Services::validation()
+            'validation' => \Config\Services::validation(),
+            'courses'    => $data['courses']
         ];
 
         echo view('templates/header', $data);
@@ -118,7 +121,7 @@ class Peserta extends BaseController
     public function edit($peserta_id)
     {
         $data = [
-            'title'      => 'Form Edit data peserta',
+            'title'      => 'Form edit data peserta',
             'validation' => \Config\Services::validation(),
             'peserta'    => $this->PesertaModel->getPeserta($peserta_id)
         ];

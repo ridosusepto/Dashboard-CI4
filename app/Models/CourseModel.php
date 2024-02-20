@@ -10,8 +10,11 @@ class CourseModel extends Model
     protected $primaryKey = 'course_id';
     protected $useTimestamps = true;
     protected $allowedFields = [
-        'course_nama',           
-             
+        'course_nama',
+        'course_kuota',
+        'course_mentor',
+        'course_desk',
+        'course_harga',
     ];
 
     protected $useAutoIncrement = true;
