@@ -36,9 +36,9 @@
                 <td><?= $pst['peserta_nama']; ?></td>
                 <!-- <td><?= $pst['peserta_gender']; ?></td> -->
                 <td>
-                  <?php if ($pst['peserta_gender'] == 'Pria') : ?>
+                  <?php if ($pst['peserta_gender'] == 'male') : ?>
                     <span class="badge bg-primary me-1"><?= $pst['peserta_gender']; ?></span>
-                  <?php elseif ($pst['peserta_gender'] == 'Perempuan') : ?>
+                  <?php elseif ($pst['peserta_gender'] == 'female') : ?>
                     <span class="badge bg-label-success me-1"><?= $pst['peserta_gender']; ?></span>
                   <?php else : ?>
                     <span class="badge bg-secondary me-1"><?= $pst['peserta_gender']; ?></span>
