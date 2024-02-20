@@ -9,9 +9,9 @@ class TbPesertaSeeder extends Seeder
     public function run()
     {
         $faker = \Faker\Factory::create('id_ID');
-        for ($i = 0; $i < 100; $i++) {
+        for ($i = 0; $i < 112; $i++) {
             $data = [
-                'peserta_nip' => $faker->randomNumber($nbDigits = NULL, $strict = false),
+                'peserta_nip' => $faker->isbn13,
                 'peserta_nama' => $faker->name,
                 'peserta_email' => $faker->email,
                 'peserta_ttl' => $faker->date($format = 'Y-m-d', $max = 'now'),
