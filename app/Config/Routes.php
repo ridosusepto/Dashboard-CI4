@@ -23,6 +23,15 @@ $routes->get('/course/edit/(:segment)', 'Course::edit/$1');
 $routes->post('/course/update/(:segment)', 'Course::update/$1');
 $routes->post('/course/save', 'Course::save');
 
+$routes->get('/kategorikelas', 'Kategorikelas::index');
+$routes->get('/kategorikelas/detail/(:any)', 'Kategorikelas::detail/$1');
+$routes->delete('/kategorikelas/(:num)', 'Kategorikelas::delete/$1');
+$routes->get('/kategorikelas/tambah', 'Kategorikelas::tambah');
+$routes->get('/kategorikelas/edit/(:segment)', 'Kategorikelas::edit/$1');
+$routes->post('/kategorikelas/update/(:segment)', 'Kategorikelas::update/$1');
+$routes->post('/kategorikelas/save', 'Kategorikelas::save');
+
+
 
 
 

@@ -3,7 +3,7 @@
     <!-- Content -->
 
     <div class="container-xxl flex-grow-1 container-p-y">
-        <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Forms/</span> Tambah Course</h4>
+        <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Forms/</span> Edit Course</h4>
 
         <!-- Basic Layout -->
         <div class="row">
