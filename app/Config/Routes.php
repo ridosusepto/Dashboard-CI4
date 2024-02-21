@@ -24,12 +24,18 @@ $routes->post('/course/update/(:segment)', 'Course::update/$1');
 $routes->post('/course/save', 'Course::save');
 
 $routes->get('/kategorikelas', 'Kategorikelas::index');
-$routes->get('/kategorikelas/detail_kategori/(:any)', 'Kategorikelas::detail_kategori/$1');
 $routes->delete('/kategorikelas/(:num)', 'Kategorikelas::delete/$1');
 $routes->get('/kategorikelas/tambah_kategori', 'Kategorikelas::tambah_kategori');
 $routes->get('/kategorikelas/edit_kategori/(:segment)', 'Kategorikelas::edit_kategori/$1');
-$routes->post('/kategorikelas/update/(:segment)', 'Kategorikelas::update/$1');
+$routes->post('/kategorikelas/update_kategori/(:segment)', 'Kategorikelas::update_kategori/$1');
 $routes->post('/kategorikelas/save_kategori', 'Kategorikelas::save_kategori');
+
+$routes->get('/kategorikelas', 'Kategorikelas::index');
+$routes->delete('/kelasdelete/(:num)', 'Kategorikelas::delete_kelas/$1');
+$routes->get('/kategorikelas/tambah_kelas', 'Kategorikelas::tambah_kelas');
+$routes->get('/kategorikelas/edit_kelas/(:segment)', 'Kategorikelas::edit_kelas/$1');
+$routes->post('/kategorikelas/update_kelas/(:segment)', 'Kategorikelas::update_kelas/$1');
+$routes->post('/kategorikelas/save_kelas', 'Kategorikelas::save_kelas');
 
 
 

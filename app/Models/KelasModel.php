@@ -9,13 +9,10 @@ class KelasModel extends Model
     protected $table      = 'tb_kelas';
     protected $primaryKey = 'kelas_id';
     protected $useTimestamps = true;
-    // protected $allowedFields = [
-    //     'course_nama',
-    //     'course_kuota',
-    //     'course_mentor',....................................................
-    //     'course_desk',
-    //     'course_harga',
-    // ];
+    protected $allowedFields = [
+        'kelas_name',
+        'kelas_kategori',
+    ];
 
     protected $useAutoIncrement = true;
 
