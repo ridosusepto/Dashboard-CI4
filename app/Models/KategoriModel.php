@@ -9,13 +9,11 @@ class KategoriModel extends Model
     protected $table      = 'tb_kategori';
     protected $primaryKey = 'kategori_id';
     protected $useTimestamps = true;
-    // protected $allowedFields = [
-    //     'course_nama',
-    //     'course_kuota',
-    //     'course_mentor',
-    //     'course_desk',
-    //     'course_harga',
-    // ];
+    protected $allowedFields = [
+        'kelas_kategori',
+        'kelas_ket',
+        
+    ];
 
     protected $useAutoIncrement = true;
 
